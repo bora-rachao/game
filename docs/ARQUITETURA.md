@@ -152,25 +152,52 @@ compartilhados.
 
 ## 7. Assets
 
+### Organização dos assets
+
+Os assets dos personagens devem ser organizados por personagem, mantendo suas diferentes expressões dentro da própria pasta. Isso facilita a manutenção, localização dos arquivos e integração com o código.
+
 ```text
 assets/
 ├── characters/
+│   ├── lucas/
+│   │   ├── default.png
+│   │   ├── correct.png
+│   │   ├── incorrect.png
+│   │   └── help.png
+│   ├── gabriel/
+│   │   ├── default.png
+│   │   ├── correct.png
+│   │   ├── incorrect.png
+│   │   └── help.png
+│   ├── rafael/
+│   ├── mariana/
+│   ├── camila/
+│   └── beatriz/
 ├── backgrounds/
 ├── ui/
 └── icons/
 ```
 
-Os personagens podem possuir estados como:
+As expressões devem ser nomeadas de acordo com sua função no jogo:
 
-```text
-normal
-happy
-wrong
-help
-thinking
-```
+- `default.png` — expressão padrão durante diálogos.
+- `correct.png` — expressão utilizada após uma resposta correta.
+- `incorrect.png` — expressão utilizada após uma resposta incorreta.
+- `help.png` — expressão utilizada durante dicas ou explicações.
 
-A quantidade final depende do protótipo e da disponibilidade dos assets.
+Novas expressões, como `thinking.png`, `surprised.png` ou `celebrating.png`, podem ser adicionadas posteriormente caso sejam necessárias para o jogo. Não devem ser criadas pastas separadas para cada expressão enquanto essa organização não trouxer um benefício real.
+
+### Formato dos arquivos
+
+Os personagens devem preferencialmente utilizar **PNG**, principalmente quando precisarem de fundo transparente para serem posicionados sobre cenários ou elementos da interface.
+
+Arquivos **JPG/JPEG também podem ser utilizados** quando a imagem possuir um fundo próprio e a transparência não for necessária. O formato não deve ser alterado apenas por padronização se isso resultar em perda desnecessária de qualidade.
+
+A escolha do formato deve considerar a função do asset:
+
+- **PNG** — personagens, elementos de interface e imagens que precisam de transparência.
+- **JPG/JPEG** — imagens com fundo completo, como determinadas ilustrações ou referências visuais.
+- **SVG** — ícones ou elementos vetoriais, quando apropriado.
 
 ## 8. Princípios para agentes
 

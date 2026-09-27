@@ -36,6 +36,7 @@ Antes de implementar ou modificar uma funcionalidade, o agente deve:
   assets.
 - `MATERIAL_PDF.pdf`: material original fornecido para a disciplina.
 - `MATERIAL_MD.md`: transcrição em Markdown do material da disciplina.
+- `docs/prompts/`: contém prompts estruturados e reutilizáveis utilizados como parte dos processos do projeto. Esses arquivos não substituem a documentação oficial e devem permanecer genéricos sempre que possível.
 
 ## Regras de desenvolvimento
 

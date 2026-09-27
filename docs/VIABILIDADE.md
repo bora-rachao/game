@@ -124,6 +124,50 @@ A equipe deve revisar e validar resultados gerados.
 IA dentro do jogo não é requisito inicial. NPC conversacional, geração
 dinâmica de perguntas e DDA por IA são possibilidades futuras.
 
+### Uso de inteligência artificial
+
+O projeto utiliza ferramentas de inteligência artificial como apoio
+ao desenvolvimento, geração de assets, ideação, revisão e
+experimentação.
+
+As ferramentas não são consideradas fonte de verdade do projeto.
+A documentação oficial do repositório representa as decisões
+consolidadas da equipe.
+
+### Geração de assets
+
+O Gemini será utilizado principalmente para geração e edição de
+personagens, expressões, cenários e outros recursos visuais.
+
+Os arquivos PERSONAS.md e DESIGN.md servem como referências para
+manter consistência entre os assets.
+
+### Desenvolvimento
+
+Ferramentas agentic podem ser utilizadas para implementação,
+refatoração, testes e revisão do código.
+
+Entre as ferramentas avaliadas estão:
+
+- VS Code + GitHub Copilot
+- Qoder
+- Google Antigravity
+- Cursor
+- Codex
+- Claude Code
+
+A escolha definitiva da ferramenta pode variar conforme a tarefa,
+disponibilidade e limitações das versões gratuitas.
+
+### Regra de documentação
+
+Ideias ou alterações sugeridas por ferramentas de IA não são
+consideradas decisões oficiais até serem avaliadas pela equipe e
+incorporadas à documentação do projeto.
+
+A documentação deve permanecer independente da ferramenta de IA
+utilizada.
+
 ## 6. Viabilidade técnica
 
 O núcleo do jogo é viável sem backend:
