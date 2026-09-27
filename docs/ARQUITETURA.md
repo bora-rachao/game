@@ -187,6 +187,24 @@ As expressões devem ser nomeadas de acordo com sua função no jogo:
 
 Novas expressões, como `thinking.png`, `surprised.png` ou `celebrating.png`, podem ser adicionadas posteriormente caso sejam necessárias para o jogo. Não devem ser criadas pastas separadas para cada expressão enquanto essa organização não trouxer um benefício real.
 
+Por essa estrutura? Porque no código fica muito mais intuitivo e a intenção do asset fica diretamente relacionada à mecânica do jogo:
+
+```js
+const characters = [
+  {
+    id: "lucas",
+    name: "Lucas",
+    images: {
+      default: "assets/characters/lucas/default.png",
+      correct: "assets/characters/lucas/correct.png",
+      incorrect: "assets/characters/lucas/incorrect.png",
+      help: "assets/characters/lucas/help.png",
+    },
+  },
+  ...
+];
+```
+
 ### Formato dos arquivos
 
 Os personagens devem preferencialmente utilizar **PNG**, principalmente quando precisarem de fundo transparente para serem posicionados sobre cenários ou elementos da interface.
