@@ -1,14 +1,306 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>👋 Olá</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#23283B" />
+    <title>Fuga da Aula</title>
+    <link
+      rel="preload"
+      href="assets/fonts/nunito-variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/componentes.css" />
+    <link rel="stylesheet" href="styles/acessibilidade.css" />
   </head>
   <body>
-    <h1>👋 Olá</h1>
+    <main class="app">
+      <div class="palco" id="palco">
+        <canvas id="tela" class="palco__canvas" aria-hidden="true"></canvas>
 
-    <script src="scripts/init.js"></script>
+        <!-- HUD da partida -->
+        <div class="hud" id="hud" hidden>
+          <div
+            class="medidor"
+            data-hud="medidor"
+            role="meter"
+            aria-label="Fôlego: distância até o professor"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-valuenow="60"
+            data-zona="alerta"
+          >
+            <div class="medidor__topo">
+              <span class="medidor__rotulo">Fôlego</span>
+              <span class="medidor__zona" data-hud="zona">Alerta 60</span>
+            </div>
+            <div class="medidor__trilho">
+              <span class="medidor__espaco"></span>
+              <span
+                class="medidor__pino medidor__pino--professor"
+                aria-hidden="true"
+                >P</span
+              >
+              <span
+                class="medidor__pino medidor__pino--aluno"
+                aria-hidden="true"
+                >D</span
+              >
+            </div>
+          </div>
+
+          <div class="progresso" data-hud="progresso" aria-hidden="true">
+            <div class="progresso__trilho">
+              <span class="progresso__preenchido"></span>
+            </div>
+            <span class="progresso__rotulo">Portão</span>
+          </div>
+
+          <div class="hud__direita">
+            <div class="placar">
+              <span class="placar__pontos" data-hud="pontos">0</span>
+              <span class="placar__mult" data-hud="mult">×1</span>
+            </div>
+            <button
+              class="botao-icone"
+              type="button"
+              data-acao="pausar"
+              aria-label="Pausar"
+            >
+              <span aria-hidden="true">II</span>
+            </button>
+          </div>
+
+          <p class="hud__aviso" data-hud="aviso" role="status" hidden></p>
+        </div>
+
+        <!-- Painel de questão (Portas, Esconderijo e Aula de Recuperação) -->
+        <section
+          class="painel"
+          id="painel-questao"
+          tabindex="-1"
+          hidden
+          aria-labelledby="painel-enunciado"
+        >
+          <p class="painel__rotulo" data-painel="rotulo"></p>
+          <div class="cronometro" data-painel="cronometro">
+            <div class="cronometro__trilho">
+              <span class="cronometro__preenchido"></span>
+              <span class="cronometro__professor" aria-hidden="true">P</span>
+            </div>
+            <span
+              class="cronometro__texto"
+              data-painel="cronometro-texto"
+            ></span>
+          </div>
+          <h2
+            class="painel__enunciado"
+            id="painel-enunciado"
+            data-painel="enunciado"
+          ></h2>
+          <ol class="painel__alternativas" data-painel="alternativas"></ol>
+          <button
+            class="botao botao--fantasma painel__nao-sei"
+            type="button"
+            data-painel="nao-sei"
+          >
+            Não sei
+          </button>
+
+          <div
+            class="feedback"
+            data-painel="feedback"
+            hidden
+            aria-live="polite"
+          >
+            <p class="feedback__titulo" data-painel="feedback-titulo"></p>
+            <p class="feedback__texto">
+              <strong>Professor Pixel:</strong>
+              <span data-painel="feedback-texto"></span>
+            </p>
+            <p class="feedback__efeito" data-painel="feedback-efeito"></p>
+            <div class="feedback__acoes">
+              <button class="botao" type="button" data-painel="continuar">
+                Continuar
+              </button>
+              <span class="feedback__auto" data-painel="auto" aria-hidden="true"
+                ><span></span
+              ></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Título -->
+        <section class="tela tela--titulo" data-tela="titulo">
+          <div class="lousa">
+            <h1 class="lousa__titulo">Fuga da Aula</h1>
+            <p class="lousa__subtitulo">
+              Fuja do Professor Pixel respondendo sobre inteligência artificial.
+            </p>
+            <div class="lousa__acoes">
+              <button
+                class="botao botao--grande"
+                type="button"
+                data-acao="abrir-mapa"
+                data-foco-inicial
+                id="botao-jogar"
+              >
+                Jogar
+              </button>
+              <button
+                class="botao botao--secundario"
+                type="button"
+                data-acao="abrir-opcoes"
+              >
+                Opções
+              </button>
+            </div>
+            <p class="lousa__controles" id="texto-controles">
+              Pule com Espaço ou ↑, deslize com ↓ e responda com as teclas 1 a
+              4.
+            </p>
+            <p
+              class="lousa__erro"
+              id="erro-carregamento"
+              role="alert"
+              hidden
+            ></p>
+            <p class="lousa__nota" id="nota-armazenamento" hidden>
+              Seu progresso não será salvo neste navegador.
+            </p>
+          </div>
+        </section>
+
+        <!-- Mapa de fases -->
+        <section
+          class="tela"
+          data-tela="mapa"
+          hidden
+          aria-labelledby="titulo-mapa"
+        >
+          <div class="cartaz">
+            <header class="cartaz__topo">
+              <h2 id="titulo-mapa">Capítulo 1: Sala de aula</h2>
+              <p>Engenharia de prompts</p>
+            </header>
+            <div class="fases" id="lista-fases"></div>
+            <div class="cartaz__rodape">
+              <button
+                class="botao botao--secundario"
+                type="button"
+                data-acao="voltar-titulo"
+              >
+                Voltar
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Pausa -->
+        <section
+          class="tela"
+          data-tela="pausa"
+          hidden
+          aria-labelledby="titulo-pausa"
+        >
+          <div class="cartao">
+            <h2 id="titulo-pausa">Pausado</h2>
+            <div class="pilha">
+              <button
+                class="botao"
+                type="button"
+                data-acao="retomar"
+                data-foco-inicial
+              >
+                Continuar
+              </button>
+              <button
+                class="botao botao--secundario"
+                type="button"
+                data-acao="abrir-opcoes"
+              >
+                Opções
+              </button>
+              <button
+                class="botao botao--secundario"
+                type="button"
+                data-acao="recomecar"
+              >
+                Recomeçar fase
+              </button>
+              <button
+                class="botao botao--fantasma"
+                type="button"
+                data-acao="sair-mapa"
+              >
+                Sair para o mapa
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Opções -->
+        <section
+          class="tela"
+          data-tela="opcoes"
+          hidden
+          aria-labelledby="titulo-opcoes"
+        >
+          <form class="cartao opcoes" id="form-opcoes">
+            <h2 id="titulo-opcoes">Opções</h2>
+            <label class="campo">
+              <span>Tamanho do texto</span>
+              <select name="tamanhoTexto" data-foco-inicial>
+                <option value="1">100%</option>
+                <option value="1.25">125%</option>
+                <option value="1.5">150%</option>
+              </select>
+            </label>
+            <label class="campo">
+              <span>Modo Estudo</span>
+              <select name="modoEstudo">
+                <option value="desligado">Desligado</option>
+                <option value="dobro">Tempo em dobro</option>
+                <option value="sem">Sem cronômetro</option>
+              </select>
+              <small
+                >Vale a partir da próxima partida. Recordes do Modo Estudo ficam
+                separados.</small
+              >
+            </label>
+            <label class="campo campo--check">
+              <input type="checkbox" name="reduzirMovimento" />
+              <span>Reduzir movimento</span>
+            </label>
+            <button class="botao" type="button" data-acao="voltar-opcoes">
+              Voltar
+            </button>
+          </form>
+        </section>
+
+        <!-- Resultados -->
+        <section
+          class="tela"
+          data-tela="resultados"
+          hidden
+          aria-labelledby="titulo-resultados"
+        >
+          <div class="boletim" id="boletim"></div>
+        </section>
+      </div>
+
+      <div class="aviso-girar" role="alert">
+        <p>Gire o celular para jogar na horizontal.</p>
+      </div>
+    </main>
+
+    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>

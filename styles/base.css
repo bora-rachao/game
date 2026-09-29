@@ -1,0 +1,53 @@
+/* Base: fonte, variáveis de cor e reset */
+@font-face {
+  font-family: 'Nunito';
+  src: url('../assets/fonts/nunito-variable.woff2') format('woff2');
+  font-weight: 200 1000;
+  font-display: swap;
+}
+
+:root {
+  --tinta: #1E2433;
+  --papel: #FFFDF6;
+  --pauta: #C9DDF1;
+  --margem: #EE8A8A;
+  --amarelo: #FFD35C;
+  --amarelo-claro: #FFE9A8;
+  --laranja: #F28C28;
+  --roxo: #7B5CD6;
+  --verde: #23864F;
+  --verde-claro: #DDF3E6;
+  --vermelho: #C73333;
+  --vermelho-claro: #FBE1E1;
+  --azul: #2F6DB5;
+  --lousa: #2F5D50;
+  --lousa-escura: #22463C;
+  --madeira: #8C5A3C;
+  --giz: #F4F1E6;
+  --fundo: #23283B;
+  --fonte: 'Nunito', ui-rounded, 'SF Pro Rounded', 'Segoe UI', system-ui, sans-serif;
+  --escala-texto: 1;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { margin: 0; height: 100%; }
+
+body {
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte);
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, p { margin: 0; }
+
+button, select, input { font: inherit; color: inherit; }
+
+[hidden] { display: none !important; }
+
+:focus-visible {
+  outline: 4px solid var(--azul);
+  outline-offset: 3px;
+}

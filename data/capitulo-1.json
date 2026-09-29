@@ -1,0 +1,321 @@
+{
+  "capitulo": 1,
+  "conceitos": {
+    "especificidade": "Pedidos específicos",
+    "objetivo": "Objetivo do pedido",
+    "tamanho": "Tamanho da resposta",
+    "papel": "Definição de papel",
+    "contexto": "Contexto relevante",
+    "publico": "Público da resposta",
+    "formato": "Formato de saída",
+    "restricoes": "Restrições",
+    "exemplos": "Uso de exemplos",
+    "refinamento": "Refinamento de prompts"
+  },
+  "questoes": [
+    {
+      "id": "c1-f1-01", "fase": "1-1", "conceito": "especificidade", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Qual pedido tende a gerar a resposta mais útil?",
+      "alternativas": [
+        "Escreva sobre marketing.",
+        "Escreva 3 ideias de post para o Instagram de uma padaria de bairro, em tom descontraído.",
+        "Me ajuda com marketing aí."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Esse pedido diz tarefa, contexto, tom e quantidade. Quanto menos a IA precisa adivinhar, melhor.",
+      "explicacaoCompleta": "Um bom pedido deixa claro o que fazer (3 ideias de post), para quem (uma padaria de bairro) e como (tom descontraído). Pedidos vagos obrigam a IA a adivinhar e geram respostas genéricas."
+    },
+    {
+      "id": "c1-f1-02", "fase": "1-1", "conceito": "objetivo", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Qual pedido deixa claro para que serve a resposta?",
+      "alternativas": [
+        "Fale sobre reciclagem.",
+        "Crie o texto de um cartaz que convença colegas a separar o lixo.",
+        "Reciclagem, por favor."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Dizer o uso final (um cartaz para convencer colegas) orienta tom, tamanho e conteúdo.",
+      "explicacaoCompleta": "Quando a IA sabe onde a resposta será usada, escolhe o tom e o tamanho certos. 'Fale sobre reciclagem' poderia virar uma aula inteira; 'um cartaz para convencer colegas' pede algo curto e persuasivo."
+    },
+    {
+      "id": "c1-f1-03", "fase": "1-1", "conceito": "tamanho", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Você quer uma resposta curta para mandar por mensagem. O que escrever no pedido?",
+      "alternativas": [
+        "Seja breve.",
+        "Responda em até 2 frases.",
+        "Não escreva muito, tá?"
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Um limite concreto (2 frases) funciona melhor do que pedidos vagos como 'seja breve'.",
+      "explicacaoCompleta": "'Breve' significa coisas diferentes para cada um. Números concretos, como '2 frases' ou 'até 50 palavras', deixam o tamanho previsível e fácil de conferir."
+    },
+    {
+      "id": "c1-f1-04", "fase": "1-1", "conceito": "especificidade", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "A IA deu uma resposta genérica. Qual é a causa mais provável?",
+      "alternativas": [
+        "O pedido estava vago.",
+        "A IA estava cansada.",
+        "Faltou dizer 'por favor'."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Respostas genéricas quase sempre vêm de pedidos genéricos. IA não se cansa.",
+      "explicacaoCompleta": "Antes de culpar a ferramenta, releia o pedido: ele diz o que você quer, para quem e em que formato? Acrescentar esses detalhes costuma resolver. Ser educado não faz mal, mas não substitui clareza."
+    },
+    {
+      "id": "c1-f1-05", "fase": "1-1", "conceito": "objetivo", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Em 'Tenho prova de biologia amanhã. Crie 5 perguntas sobre células, com respostas.', qual é a tarefa?",
+      "alternativas": [
+        "Estudar biologia.",
+        "Criar 5 perguntas sobre células, com respostas.",
+        "Marcar a prova."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "A tarefa é a ação que a IA deve fazer. A prova de amanhã é contexto.",
+      "explicacaoCompleta": "Separar tarefa (o que fazer) de contexto (por que e para quem) ajuda a escrever pedidos claros. Aqui a tarefa é criar 5 perguntas; saber que há uma prova amanhã ajuda a IA a acertar o nível."
+    },
+    {
+      "id": "c1-f1-06", "fase": "1-1", "conceito": "especificidade", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "Qual versão do pedido é mais objetiva?",
+      "alternativas": [
+        "Queria saber se você poderia me ajudar de alguma forma com ideias para um aniversário.",
+        "Liste 5 ideias de festa para 10 crianças de 8 anos, com orçamento de R$ 300.",
+        "Festa de aniversário ideias criativas legais.",
+        "Me ajuda com uma festa?"
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Ela diz a tarefa, a quantidade, o público e o limite de orçamento, sem rodeios.",
+      "explicacaoCompleta": "Objetividade não é ser curto, é dizer o necessário: o que você quer (5 ideias), para quem (10 crianças de 8 anos) e com qual limite (R$ 300). Rodeios e palavras soltas atrapalham."
+    },
+    {
+      "id": "c1-f1-07", "fase": "1-1", "conceito": "tamanho", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "Você pediu 'um resumo curto' e recebeu 3 parágrafos. Qual o melhor ajuste?",
+      "alternativas": [
+        "Pedir 'mais curto ainda'.",
+        "Pedir 'Resuma em 1 frase de até 20 palavras'.",
+        "Reclamar que a resposta ficou ruim.",
+        "Copiar só o primeiro parágrafo."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Troque o adjetivo por um número: '1 frase de até 20 palavras' não deixa dúvida.",
+      "explicacaoCompleta": "Quando o tamanho importa, dê uma medida concreta. 'Mais curto' ainda depende da interpretação da IA; uma frase de até 20 palavras é algo que você consegue conferir."
+    },
+    {
+      "id": "c1-f1-08", "fase": "1-1", "conceito": "objetivo", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "Por que dizer 'é para um e-mail ao meu chefe' melhora a resposta?",
+      "alternativas": [
+        "Porque a IA ajusta o tom e o conteúdo ao uso.",
+        "Porque deixa o prompt mais longo.",
+        "Porque a IA só sabe escrever e-mails.",
+        "Não melhora em nada."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Saber o destino da resposta faz a IA escolher tom, tamanho e estrutura adequados.",
+      "explicacaoCompleta": "Informar onde a resposta será usada é um atalho poderoso: 'e-mail ao chefe' já implica tom profissional, objetividade e saudação adequada, sem precisar listar tudo."
+    },
+
+    {
+      "id": "c1-f2-01", "fase": "1-2", "conceito": "papel", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Qual trecho define um papel para a IA?",
+      "alternativas": [
+        "Responda em tópicos.",
+        "Atue como revisor de textos técnicos.",
+        "Use no máximo 100 palavras."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "O papel orienta vocabulário, exigência e ponto de vista. Os outros trechos são formato e limite.",
+      "explicacaoCompleta": "Definir um papel ('atue como revisor de textos técnicos') faz a IA adotar os critérios daquela função. Tópicos e limite de palavras também são úteis, mas são formato e restrição."
+    },
+    {
+      "id": "c1-f2-02", "fase": "1-2", "conceito": "contexto", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Qual informação é contexto útil para 'Sugira um cardápio da semana'?",
+      "alternativas": [
+        "Somos 3 pessoas e uma é vegetariana.",
+        "Responda rápido.",
+        "Obrigado desde já."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Quantas pessoas e quais restrições mudam completamente o cardápio. Isso é contexto útil.",
+      "explicacaoCompleta": "Contexto é o que a IA precisa saber sobre a sua situação para acertar: quantidade de pessoas, restrições alimentares, orçamento. Pressa e agradecimentos não mudam o resultado."
+    },
+    {
+      "id": "c1-f2-03", "fase": "1-2", "conceito": "publico", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Você quer explicar fotossíntese para uma criança de 7 anos. O que acrescentar?",
+      "alternativas": [
+        "Use termos técnicos.",
+        "Explique para uma criança de 7 anos, com exemplos do dia a dia.",
+        "Seja formal."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Dizer quem vai ler faz a IA ajustar vocabulário, exemplos e profundidade.",
+      "explicacaoCompleta": "O mesmo tema pede explicações diferentes para públicos diferentes. Declarar o público (uma criança de 7 anos) é a forma mais simples de acertar o nível."
+    },
+    {
+      "id": "c1-f2-04", "fase": "1-2", "conceito": "papel", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "Qual papel combina melhor com o pedido 'Encontre problemas no meu currículo'?",
+      "alternativas": [
+        "Atue como recrutador que avalia currículos para vagas de estágio.",
+        "Atue como poeta.",
+        "Atue como meu amigo que concorda com tudo.",
+        "Atue como uma IA."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Um recrutador tem os critérios certos para achar falhas. Um amigo que concorda faria o oposto.",
+      "explicacaoCompleta": "O papel ideal é o de quem tem os critérios da tarefa. Para revisar currículo, quem avalia currículos (e para que tipo de vaga) aponta os problemas que importam."
+    },
+    {
+      "id": "c1-f2-05", "fase": "1-2", "conceito": "contexto", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "A IA sugeriu viagens caras, mas você tem pouco dinheiro. O que faltou no pedido?",
+      "alternativas": [
+        "Contexto: orçamento e restrições.",
+        "Um papel para a IA.",
+        "Emojis.",
+        "Escrever o pedido em inglês."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Sem saber o orçamento, a IA não tem como evitar sugestões caras. Informe seus limites.",
+      "explicacaoCompleta": "A IA só considera o que você conta. Orçamento, datas, com quem você vai e o que não pode faltar são contexto que muda a resposta."
+    },
+    {
+      "id": "c1-f2-06", "fase": "1-2", "conceito": "publico", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "Você precisa do mesmo texto em duas versões: para investidores e para alunos. O que muda no pedido?",
+      "alternativas": [
+        "Nada, a IA adapta sozinha.",
+        "Declarar o público de cada versão e o que ele precisa saber.",
+        "Apenas o tamanho do texto.",
+        "Apenas o idioma."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Cada público tem interesses diferentes. Diga quem vai ler e o que essa pessoa precisa saber.",
+      "explicacaoCompleta": "Investidores querem números e riscos; alunos querem entender o conceito. Sem essa informação, a IA escreve para um leitor médio que não existe."
+    },
+    {
+      "id": "c1-f2-07", "fase": "1-2", "conceito": "contexto", "dificuldade": "dificil", "formato": "esconderijo",
+      "enunciado": "Qual pedido dá o contexto certo, sem excesso?",
+      "alternativas": [
+        "Crie um exercício.",
+        "Sou professora do 9º ano. Crie um exercício de frações para alunos com dificuldade em denominadores diferentes.",
+        "Crie um exercício. Minha escola tem 40 anos, fica perto de uma praça e a cantina vende pão de queijo.",
+        "Crie um exercício difícil e legal."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Bom contexto é o que muda a resposta: série, tema e dificuldade. Detalhes irrelevantes atrapalham.",
+      "explicacaoCompleta": "Mais contexto não é sempre melhor. Informações sem relação com a tarefa (a cantina, a praça) desviam a atenção. Prefira o que afeta o resultado: quem vai usar, o tema e a dificuldade."
+    },
+    {
+      "id": "c1-f2-08", "fase": "1-2", "conceito": "papel", "dificuldade": "dificil", "formato": "esconderijo",
+      "enunciado": "O papel 'Atue como especialista' costuma ajudar pouco. Por quê?",
+      "alternativas": [
+        "É genérico: não diz especialista em quê nem para quê.",
+        "A IA não aceita papéis.",
+        "Papéis deixam a resposta mais lenta.",
+        "O papel precisa estar em inglês."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Um papel útil é específico, como 'nutricionista que orienta atletas iniciantes'.",
+      "explicacaoCompleta": "Papéis funcionam porque trazem os critérios de uma área. 'Especialista' sem área não traz critério nenhum. Diga a área, o nível e o objetivo."
+    },
+
+    {
+      "id": "c1-f3-01", "fase": "1-3", "conceito": "formato", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Qual trecho define o formato de saída?",
+      "alternativas": [
+        "Responda em uma tabela com as colunas Nome e Preço.",
+        "Você é um vendedor.",
+        "É para a loja da minha tia."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Formato de saída é como a resposta deve vir: tabela, lista, JSON, número de tópicos.",
+      "explicacaoCompleta": "Papel (vendedor) e contexto (loja da tia) ajudam no conteúdo. O formato define a forma da resposta, e é essencial quando você vai colar o resultado em outro lugar."
+    },
+    {
+      "id": "c1-f3-02", "fase": "1-3", "conceito": "restricoes", "dificuldade": "facil", "formato": "portas",
+      "enunciado": "Qual destes trechos é uma restrição?",
+      "alternativas": [
+        "Não use gírias.",
+        "Atue como professor.",
+        "O tema é vulcões."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Restrições dizem o que evitar ou quais limites respeitar. Papel e tema são outras partes.",
+      "explicacaoCompleta": "Restrições (não use gírias, até 100 palavras, sem termos técnicos) estreitam o espaço de respostas possíveis e evitam retrabalho."
+    },
+    {
+      "id": "c1-f3-03", "fase": "1-3", "conceito": "formato", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "Você pediu uma comparação entre três celulares e recebeu três parágrafos longos. Qual o melhor próximo passo?",
+      "alternativas": [
+        "Enviar o mesmo pedido de novo.",
+        "Pedir: 'Responda apenas com uma tabela com as colunas Preço, Bateria e Câmera.'",
+        "Escrever o pedido em letras maiúsculas.",
+        "Desistir e pesquisar sozinho."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Quando o formato importa, diga qual é. Refinar com o formato funciona melhor do que repetir.",
+      "explicacaoCompleta": "Comparações ficam muito mais claras em tabela. Dizer as colunas exatas garante que os três celulares sejam comparados pelos mesmos critérios."
+    },
+    {
+      "id": "c1-f3-04", "fase": "1-3", "conceito": "exemplos", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "Você quer classificar comentários de clientes em 'elogio', 'reclamação' ou 'sugestão', seguindo os critérios da sua empresa. O que mais aumenta a precisão?",
+      "alternativas": [
+        "Pedir para a IA ter cuidado.",
+        "Incluir 2 ou 3 comentários já classificados como exemplo.",
+        "Escrever o pedido em inglês.",
+        "Pedir uma resposta mais longa."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Exemplos mostram o critério na prática. Essa técnica se chama few-shot.",
+      "explicacaoCompleta": "Quando o critério é da sua empresa, a IA não tem como adivinhá-lo. Alguns exemplos classificados ensinam o padrão melhor do que qualquer instrução abstrata."
+    },
+    {
+      "id": "c1-f3-05", "fase": "1-3", "conceito": "refinamento", "dificuldade": "media", "formato": "esconderijo",
+      "enunciado": "A primeira resposta ficou quase boa. Qual o melhor caminho?",
+      "alternativas": [
+        "Apagar tudo e começar do zero.",
+        "Dizer o que manter e o que mudar: 'Mantenha a estrutura e troque os exemplos por outros do Brasil.'",
+        "Responder apenas 'ficou ruim'.",
+        "Aceitar como está."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Refinar é dar retorno específico: o que manter e o que mudar. 'Ficou ruim' não orienta a IA.",
+      "explicacaoCompleta": "Conversar com a IA em etapas é normal. O refinamento funciona quando você aponta exatamente o que ajustar, aproveitando o que já está bom."
+    },
+    {
+      "id": "c1-f3-06", "fase": "1-3", "conceito": "refinamento", "dificuldade": "dificil", "formato": "esconderijo",
+      "enunciado": "O pedido 'Resuma este contrato.' gerou um resumo genérico. Qual complemento resolve melhor?",
+      "alternativas": [
+        "Seja muito inteligente.",
+        "Resuma bem resumido.",
+        "Resuma em até 5 tópicos, para alguém sem formação jurídica, destacando prazos, multas e obrigações.",
+        "Use sua criatividade."
+      ],
+      "correta": 2,
+      "explicacaoCurta": "Ele define público, foco, formato e tamanho. Adjetivos como 'inteligente' não dão critérios.",
+      "explicacaoCompleta": "Ao refinar, troque intenções vagas por critérios que dá para conferir: quantos tópicos, para quem e o que destacar. Assim você consegue checar se a resposta cumpriu o pedido."
+    },
+    {
+      "id": "c1-f3-07", "fase": "1-3", "conceito": "restricoes", "dificuldade": "dificil", "formato": "esconderijo",
+      "enunciado": "Você incluiu no pedido: 'Se a informação não estiver no texto, responda: não consta.' Que risco essa restrição reduz?",
+      "alternativas": [
+        "A resposta ficar longa demais.",
+        "A IA inventar informações que parecem verdadeiras.",
+        "A IA responder em outro idioma.",
+        "O custo de uso da ferramenta."
+      ],
+      "correta": 1,
+      "explicacaoCurta": "Dar à IA uma saída honesta para 'não sei' reduz invenções. Mesmo assim, confira o que importa.",
+      "explicacaoCompleta": "Modelos de linguagem tendem a completar respostas mesmo sem base, o que gera alucinações. Permitir explicitamente 'não consta' diminui esse risco, mas não elimina a necessidade de verificar."
+    },
+    {
+      "id": "c1-f3-08", "fase": "1-3", "conceito": "formato", "dificuldade": "dificil", "formato": "esconderijo",
+      "enunciado": "A resposta da IA vai ser lida por um programa que espera JSON. O que pedir?",
+      "alternativas": [
+        "Responda somente com JSON válido, sem texto antes ou depois, com as chaves nome e idade.",
+        "Mande em JSON, se possível.",
+        "Organize bem a resposta.",
+        "Use markdown bonito."
+      ],
+      "correta": 0,
+      "explicacaoCurta": "Quando um programa vai ler a resposta, o formato precisa ser exato: tipo, chaves e nada além.",
+      "explicacaoCompleta": "Programas quebram com qualquer texto extra. Pedir 'somente JSON válido', listar as chaves e proibir texto antes ou depois torna a saída previsível."
+    }
+  ]
+}

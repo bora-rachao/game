@@ -1,0 +1,24 @@
+/* Acessibilidade: reduzir movimento (opção do jogo ou preferência do sistema) */
+:root[data-reduzir-movimento="true"] *,
+:root[data-reduzir-movimento="true"] *::before,
+:root[data-reduzir-movimento="true"] *::after {
+  transition: none !important;
+  animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Com texto ampliado, as alternativas das Portas passam a ficar empilhadas */
+:root[data-texto-grande="true"]
+  .painel[data-formato="portas"]
+  .painel__alternativas {
+  grid-auto-flow: row;
+  grid-template-columns: 1fr;
+}
